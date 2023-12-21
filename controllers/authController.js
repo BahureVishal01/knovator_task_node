@@ -2,14 +2,18 @@ const User = require("../models/userModel");
 const bcrypt = require("bcryptjs");
 const Config = require("../utils/config");
 const jwt = require("jsonwebtoken");
-
+const {validationResult } = require('express-validator');
 
  /**
  * Controller for signin
  */
 const signup = async(req, res)=>{
     // How the user sign up will happen   
-
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+      return res.status(400).json({ errors: errors.array() });
+    }
+    
     const userObjToBeStoredInDB = {
         name: req.body.name,
         userName: req.body.userName,
