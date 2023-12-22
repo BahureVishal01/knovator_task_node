@@ -1,5 +1,5 @@
 
-FROM node:14-slim
+FROM node:bookworm-slim
 
 # Set the working directory inside the container
 WORKDIR /nodejs_app

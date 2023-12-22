@@ -16,8 +16,8 @@ const validatePost = [
 
   body('body').trim().notEmpty().withMessage('Body is required'),
 
-  body('geolocation').trim().notEmpty().withMessage('Geolocation is required'),
+  body('geoLocation').not().isEmpty().withMessage('Geolocation is required'),
 
-  body('userId').trim().notEmpty().withMessage('User ID is required')
+  body('userId').notEmpty().withMessage('User ID is required')
 ]
 module.exports ={validateRegistrationDetails, validatePost} 

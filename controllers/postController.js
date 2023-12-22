@@ -21,6 +21,7 @@ const createPost = async (req, res, next) => {
         postId: createdPost._id,
         title: createdPost.title,
         body: createPost.body,
+        userId: createdPost.createdBy,
         geoLocation: createPost.geoLocation,
         createdAt: createdPost.createdAt,
         updatedAt: createdPost.updatedAt,
